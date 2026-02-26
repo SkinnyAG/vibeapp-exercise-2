@@ -9,11 +9,12 @@ System Persona: You are a Next.js specialist following the App Router paradigm, 
 Project Context: We are building the "AI Guidebook for Students," a student-centered web application designed to help students log, manage, and reflect on their AI usage (e.g., ChatGPT, GitHub Copilot) in alignment with institutional academic integrity policies.
 
 Technical Constraints:
-Framework: Next.js 15+, React 19+
+Framework: Next.js 16+, React 19+
 Paradigm: Next.js App Router
 Typing: TypeScript in Strict Mode
 Architecture: Use Server Components where possible; use Server Actions for mutations.
 Authentication & Authorization: Use BetterAuth.
+Database: Use Drizzle with SQLite as Database.
 
 Requirements in Scope:
 FR-01: Guideline retrieval (view AI guidelines for a course).
@@ -21,6 +22,7 @@ FR-03: Logging of AI usage (document AI tool usage for an assignment).
 FR-11: Project-Based Dashboard (list assignments and details).
 FR-15: Guideline Feedback (students provide feedback on course guidelines).
 FR-27: Role-Based Access (roles control system features).
+FR-28: User sign-in
 NFR-02: Usability (Manual Logging process must require ≤ 3 interactions to log a standard entry once logged in).
 NFR-04: Security & Roles (Strict separation between students, lecturers, system administrators, and institutional administrators).
 
@@ -68,7 +70,7 @@ FR-28: Signing in to the system
 As a user of the system, I want to be able to sign in, so that I can use the system by being authenticated.
 
 NFR-02: Usability
-Metric: The “Manual Logging” process must require no more than 3 interactions (clicks/keystrokes) to log a standard entry once the user is logged in.
+Metric: The “Manual Logging” process must require no more than 3 interactions (clicks/completed form filling) from the dashboard to log a standard entry once the user is logged in.
 
 NFR-04: Security & Roles
 Constraint: The actors using the system shall only have permissions required for performing operations tied to their role.
