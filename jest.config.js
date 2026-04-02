@@ -13,6 +13,8 @@ module.exports = {
   },
   collectCoverage: true,
   collectCoverageFrom: [
+    "app/**/*.{ts,tsx}",
+    "middleware.ts",
     "components/**/*.{ts,tsx}", 
     "lib/**/*.{ts,tsx}", 
     "!lib/db/**",
@@ -20,4 +22,11 @@ module.exports = {
     "!**/node_modules/**",
     "!**/*.d.ts",
   ],
+  coverageThreshold: {
+    global: {
+      lines: 60,
+      branches: 70,
+      functions: 80,
+    },
+  },
 };
